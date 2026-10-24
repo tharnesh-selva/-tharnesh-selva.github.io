@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Diary | Petal & Scene</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        body {
+            --site-bg-image: url('../assets/background/diary.png');
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo glow-text">夜桜 Petal & Scene</div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="discover.html" class="nav-link">Discover</a>
+            <a href="collection.html" class="nav-link">Collection</a>
+            <a href="diary.html" class="nav-link active">Diary</a>
+            <a href="garden.html" class="nav-link">Garden</a>
+            <a href="#" class="nav-link nav-settings-trigger" onclick="window.dispatchEvent(new Event('toggleSettingsMenu')); return false;">⚙️ Settings</a>
+        </nav><!-- Ambient Navigation Video Strip -->
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; border-bottom: 1px solid var(--glass-border);">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.65; pointer-events: none;">
+        <source src="../assets/videos/petals.mp4" type="video/mp4">
+    </video>
+</div>
+
+    </header>
+
+    <main class="container">
+        <section class="section section-heading fade-up">
+            <h1>Your diary</h1>
+            <p>Note how a drama made you feel. Your log frequencies will actively shape the design system color profiles.</p>
+        </section>
+
+        <!-- Two Column Form vs Stream Layout Split -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+            
+            <!-- Log Entry Input Form Component -->
+            <section class="glass-card" style="padding: 32px;">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--moonlight);">New entry</h2>
+                <form class="diary-form" style="display: flex; flex-direction: column; gap: 20px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 8px;">Drama</label>
+                        <select class="drama-select" style="width: 100%; padding: 12px; background: var(--midnight-soft); color: var(--moonlight); border: 1px solid var(--glass-border); border-radius: 8px; outline: none;">
+                            <option value="all-1">Crash Landing on You</option>
+                            <option value="all-2">Alchemy of Souls</option>
+                            <option value="all-4">Lovely Runner</option>
+                            <option value="all-3">It's Okay to Not Be Okay</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 8px;">How did it make you feel?</label>
+                        <select class="mood-select-menu" style="width: 100%; padding: 12px; background: var(--midnight-soft); color: var(--moonlight); border: 1px solid var(--glass-border); border-radius: 8px; outline: none;">
+                            <option value="cozy">🍵 Cozy</option>
+                            <option value="hopeful">🌅 Hopeful</option>
+                            <option value="nostalgic">🏮 Nostalgic</option>
+                            <option value="serene">🌙 Serene</option>
+                            <option value="thrilled">⚡ Thrilled</option>
+                            <option value="melancholy">🌧 Melancholy</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 8px;">Entry Title</label>
+                        <input type="text" class="entry-title-input" required style="width: 100%; padding: 12px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--moonlight); outline: none;">
+                    </div>
+
+                    <div>
+                        <label style="display: block; margin-bottom: 8px;">Your Thoughts</label>
+                        <textarea class="thoughts-textarea" rows="5" required style="width: 100%; padding: 12px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; color: var(--moonlight); outline: none; resize: none;"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Save entry</button>
+                </form>
+            </section>
+
+            <!-- Live Timeline Stream Container -->
+            <section class="past-entries-list">
+                <h2 style="font-size: 1.5rem; margin-bottom: 20px; color: var(--moonlight);">Past entries</h2>
+                <div class="entries-stream-container"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="../js/dramas.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/moodbloom.js"></script>
+    <script src="../js/diary.js"></script>
+</body>
+</html>

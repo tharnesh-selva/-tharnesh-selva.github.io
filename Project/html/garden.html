@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Sakura Garden | Petal & Scene</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        body {
+            --site-bg-image: url('../assets/background/garden.png');
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo glow-text">夜桜 Petal & Scene</div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="discover.html" class="nav-link">Discover</a>
+            <a href="collection.html" class="nav-link">Collection</a>
+            <a href="diary.html" class="nav-link">Diary</a>
+            <a href="garden.html" class="nav-link active">Garden</a>
+            <a href="#" class="nav-link nav-settings-trigger" onclick="window.dispatchEvent(new Event('toggleSettingsMenu')); return false;">⚙️ Settings</a>
+        </nav>
+        <!-- Ambient Navigation Video Strip -->
+<div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: -1; border-bottom: 1px solid var(--glass-border);">
+    <video autoplay muted loop playsinline style="width: 100%; height: 100%; object-fit: cover; opacity: 0.65; pointer-events: none;">
+        <source src="../assets/videos/petals.mp4" type="video/mp4">
+    </video>
+</div>
+
+    </header>
+
+    <main class="container">
+        <section class="section section-heading fade-up">
+            <h1>Your sakura garden</h1>
+            <p>A moonlit digital sanctuary that scales alongside your watching journey. Choose a botanical flower type, plant it across the fields, and watch the layout react.</p>
+        </section>
+
+        <!-- Live Live Synchronized Application Data Counter Badges -->
+        <section class="glass-card" style="padding: 20px; display: flex; gap: 40px; margin-bottom: 32px; justify-content: center; text-align: center;">
+            <div>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 4px;">Blossoms Planted</p>
+                <span class="count-planted" style="font-size: 1.75rem; font-weight: bold; color: var(--sakura);">0 / 0</span>
+            </div>
+            <div>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 4px;">Dramas Completed</p>
+                <span class="count-completed" style="font-size: 1.75rem; font-weight: bold; color: var(--moonlight);">0</span>
+            </div>
+            <div>
+                <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 4px;">Garden Level</p>
+                <span style="font-size: 1.75rem; font-weight: bold; color: var(--moonlight);">1</span>
+            </div>
+        </section>
+
+        <!-- Two Column Main Workspace Split Grid Layout Grid -->
+        <div style="display: grid; grid-template-columns: 3fr 1fr; gap: 32px; align-items: start;">
+            
+            <!-- Interactive HTML5 Canvas Render Card Module Box -->
+            <div class="glass-card" style="padding: 16px; background: rgba(0, 0, 0, 0.2);">
+                <canvas id="gardenCanvas" style="display: block; width: 100%; height: 450px; border-radius: 12px; background: #0b0d19; border: 1px solid var(--glass-border); cursor: crosshair; transition: transform 100ms ease;"></canvas>
+            </div>
+
+            <!-- Custom Graphic Seed Selection Sidebar Panel Controller Cards -->
+            <div class="glass-card" style="padding: 24px;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 16px; color: var(--moonlight);">Choose a flower</h3>
+                <div style="display: flex; flex-direction: column; gap: 14px;">
+                    
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="radio" name="flowerSeed" class="flower-radio" value="blossom" checked style="accent-color: var(--sakura);">
+                        <div>
+                            <strong style="color: var(--moonlight);">Cherry Blossom</strong>
+                            <p style="font-size: 0.75rem; color: var(--muted); margin-top: 2px;">Uses cherry_blossom.svg asset.</p>
+                        </div>
+                    </label>
+                    
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="radio" name="flowerSeed" class="flower-radio" value="branch" style="accent-color: var(--sakura);">
+                        <div>
+                            <strong style="color: var(--moonlight);">Flower Branch</strong>
+                            <p style="font-size: 0.75rem; color: var(--muted); margin-top: 2px;">Uses flower_branch.svg asset.</p>
+                        </div>
+                    </label>
+                    
+                    <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                        <input type="radio" name="flowerSeed" class="flower-radio" value="tulip" style="accent-color: var(--sakura);">
+                        <div>
+                            <strong style="color: var(--moonlight);">Pink Tulip</strong>
+                            <p style="font-size: 0.75rem; color: var(--muted); margin-top: 2px;">Uses pink_tulip.svg asset.</p>
+                        </div>
+                    </label>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer style="border-top: 1px solid var(--glass-border); padding-block: 40px; margin-top: 60px; text-align: center; color: var(--muted); font-size: 0.9rem;">
+        <p class="glow-text" style="margin-bottom: 12px;">夜桜と物語 – stories worth staying up for.</p>
+        <p>© 2026 Petal & Scene. Made for a college project.</p>
+    </footer>
+
+    <script src="../js/dramas.js"></script>
+    <script src="../js/storage.js"></script>
+    <script src="../js/settings.js"></script>
+    <script src="../js/moodbloom.js"></script>
+    <script src="../js/garden.js"></script>
+</body>
+</html>
